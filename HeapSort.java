@@ -1,10 +1,12 @@
 public class HeapSort {
     public static void main(String[] args) {
-        int [] array = {2, 34, 55, 1, 1, 8, 90, 14};
-        heapSort(array);
+        int[] array = { 2, 34, 55, 1, 1, 8, 90, 14 };
+        HeapSort toSort = new HeapSort();
+        toSort.heapSort(array);
+        printArray(array);
     }
 
-    public static void heapSort(int[] arr) {
+    public void heapSort(int[] arr) {
         for (int i = arr.length / 2 - 1; i >= 0; i--) {
             heapify(arr, arr.length, i);
         }
@@ -27,19 +29,17 @@ public class HeapSort {
         if (right < size && arr[right] > arr[largest]) {
             largest = right;
         }
-        if (largest !=i) {
+        if (largest != i) {
             int swap = arr[i];
-            arr [i] = arr[largest];
+            arr[i] = arr[largest];
             arr[largest] = swap;
         }
         heapify(arr, size, largest);
     }
 
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
+    static void printArray(int arr[]) {
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
         System.out.println();
     }
 }
