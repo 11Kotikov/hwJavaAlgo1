@@ -33,8 +33,8 @@ public class HeapSort {
             int swap = arr[i];
             arr[i] = arr[largest];
             arr[largest] = swap;
+            heapify(arr, size, largest);
         }
-        heapify(arr, size, largest);
     }
 
     static void printArray(int arr[]) {
