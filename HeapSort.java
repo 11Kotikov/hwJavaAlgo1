@@ -1,6 +1,7 @@
 public class HeapSort {
     public static void main(String[] args) {
-
+        int [] array = {2, 34, 55, 1, 1, 8, 90, 14};
+        heapSort(array);
     }
 
     public static void heapSort(int[] arr) {
@@ -32,5 +33,13 @@ public class HeapSort {
             arr[largest] = swap;
         }
         heapify(arr, size, largest);
+    }
+
+    static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i]+" ");
+        System.out.println();
     }
 }
